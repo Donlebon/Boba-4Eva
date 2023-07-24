@@ -1,0 +1,222 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+$bodyfont: 'Lora', serif;
+$navbar: #F89898;
+$buttonColor: #8B89F3;
+$footerColor: #7FEF7D;
+$navbar2: #F69696;
+$navbar3: #F9A3A3;
+
+body{
+    // background-color: #7DEFEF;
+}
+
+// Homepage
+
+.home-container{
+    font-family: $bodyfont;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    .highlight{
+        background-color: $navbar;
+        position: absolute;
+        height: 150px;
+        z-index: -1;
+        width: 1290px;
+        border-radius: 0.5em;
+    }
+
+    .zip-container{
+        padding: 0em 6em;
+        padding-top: 1em;
+        display: flex;
+        align-items: flex-end;
+        padding-bottom: 4em;
+
+        .cat, .elephant{
+            height: 250px;
+            width: 250px;
+        }
+
+        .search{
+            font-family: $bodyfont;
+            margin-left: 1em;
+            font-size: 2rem;
+            height: 50px;
+            width: 400px;
+            border-radius: 0.3em;
+            border-style: none;
+            border: 0.1px solid black;
+            border-right: none;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            padding-left: 1em;
+        }
+
+
+        .submit{
+            text-decoration: none;
+            font-family: $bodyfont;
+            cursor: pointer;
+            margin-right: 0.5em;
+            height: 50px;
+            padding-left: 0.5em;
+            padding-right: 0.5em;
+            font-size: 2rem;
+            border-style: none;
+            border-top-right-radius: 0.3em;
+            border-bottom-right-radius: 0.3em;
+            background-color: $buttonColor;
+            color: white;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+
+        .submit:active{
+            border: 0.1px solid black;
+            background-color: white;
+            color: $buttonColor;
+            transition: 0.1s ease-in-out;
+        }
+
+    }
+
+    .footer{
+        position: absolute;
+        width: 1098px;
+        height: 30px;
+        bottom: 0;
+        background-color: $navbar;
+        border-radius: 0.5em;
+
+       
+    }
+   
+}
+
+// Navbar
+
+.nav-container2{
+    padding: 2em 2em 1em 2em;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background-color: $navbar;
+
+    h1{
+        color: white;
+        font-size: 3rem;
+        font-family: 'Cherry Bomb One';
+    }
+    .zip-container{
+        // padding: 0em 0em 0em em;
+        padding-top: 1em;
+        display: flex;
+        align-items: flex-end;
+
+        .cat, .elephant{
+            height: 125px;
+            width: 125px;
+        }
+
+        .elephant{
+            margin-left: 4em;
+        }
+
+        .search{
+            font-family: $bodyfont;
+            margin-left: 1em;
+            font-size: 2rem;
+            height: 50px;
+            width: 400px;
+            border-radius: 0.3em;
+            border-style: none;
+            border: 0.1px solid black;
+            border-right: none;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            padding-left: 1em;
+        }
+
+        .submit{
+            font-family: $bodyfont;
+            cursor: pointer;
+            margin-right: 0.7em;
+            height: 50px;
+            width: 150px;
+            font-size: 2rem;
+            border-style: none;
+            border-top-right-radius: 0.3em;
+            border-bottom-right-radius: 0.3em;
+            background-color: $buttonColor;
+            color: white;
+            font-weight: 700;
+        }
+
+        .submit:active{
+            border: 0.1px solid black;
+            background-color: white;
+            color: $buttonColor;
+            transition: 0.1s ease-in-out;
+        }
+
+        .favorite{
+            margin-left: 2em;
+            font-family: $bodyfont;
+            cursor: pointer;
+            height: 50px;
+            font-size: 2rem;
+            border-style: none;
+            border-radius: 0.3em;
+            background-color: $buttonColor;
+            color: white;
+            font-weight: 700;
+            padding: 0 0.5em;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            
+        }
+
+        .favorite:active{
+            background-color: white;
+            color: $buttonColor;
+            transition: 0.1s ease-in-out;
+        }
+
+    }
+}
+
+
+
+// Searchbar
+.nav-container{
+    padding: 2em 7em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    h1{
+        font-size: 3rem;
+        font-family: 'Cherry Bomb One';
+    }
+}
+
+.loading{
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5em;
+    font-size: 3rem;
+    font-family: 'Cherry Bomb One'
+
+}
+
+

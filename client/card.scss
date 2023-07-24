@@ -1,0 +1,118 @@
+$bodyfont: 'Lora', serif;
+$navbar: #F89898;
+$buttonColor: #8B89F3;
+$footerColor: #7FEF7D;
+$navbar2: #F69696;
+$navbar3: #F9A3A3;
+$body: #DFDFDF;
+
+body{
+    background-color: #F9F5F6;
+}
+
+.card{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.attr{
+    display: flex;
+    justify-content: center;
+    margin-top: 28em;
+    font-size: 0.5rem;
+}
+
+.flaticon{
+    margin-right: 2em;
+}
+
+.card-container{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 350px;
+    background-color: white;
+    border-radius: 0.5em;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;    
+    font-family: $bodyfont;
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
+
+    .storePic{
+        margin: auto;
+        height: 250px;
+        width: 350px;
+        border-top-left-radius: 0.5em;
+        border-top-right-radius: 0.5em;
+
+    }
+
+    .storeName{
+        margin-top: 0.5em; 
+        text-align: center;
+        margin-bottom: 0.2em;
+        font-size: 1.3rem;
+    }
+
+    .storeLocation{
+        text-align: center;
+        margin-bottom: 1em;
+        font-weight: 700;
+        font-size: 0.8rem;
+    }
+
+    .rating-container{
+        display: flex;
+        justify-content: space-around;
+
+        .storeRating{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .rating-title{
+                font-weight: 700;
+            }
+        }
+        .storeReview{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .review-title{
+                font-weight: 700;
+            }
+        }
+    }
+
+    .url, .star{
+        height: 25px;
+        width: 25px;
+    }
+
+    .card-footer{
+
+        a{
+            width: 0px;
+        }
+
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1em;
+        margin-bottom: 0.5em;
+
+        .url{
+            margin-left: 1em;
+        }
+
+        .boba{
+            margin-right: 1em;
+            cursor: pointer;
+            border-radius: 0.2em;
+            height: 25px;
+            width: 25px;
+        }
+
+    }
+}
+

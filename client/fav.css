@@ -1,0 +1,45 @@
+.fav-container {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  border: 1px solid black;
+  width: 300px;
+  margin: auto;
+}
+.fav-container p {
+  margin-bottom: 2em;
+}
+.fav-container .drinks-container {
+  margin-bottom: 1em;
+  display: flex;
+  justify-content: space-around;
+}
+.fav-container .delete-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.yelp {
+  width: 25px;
+  height: 25px;
+  margin-left: 0.3em;
+  margin-bottom: 0.3em;
+}
+
+.trash {
+  height: 25px;
+  width: 25px;
+  margin-right: 0.3em;
+  margin-bottom: 0.3em;
+  cursor: pointer;
+}
+
+.star-container {
+  margin-left: 1em;
+}
+
+.blankStar {
+  height: 25px;
+  width: 25px;
+}/*# sourceMappingURL=fav.css.map */
