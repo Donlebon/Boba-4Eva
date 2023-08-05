@@ -7,23 +7,23 @@ export const DataProvider = ({children}) => {
 
     const [bobaRating, setBobaRating] = useState({
         fav1: {
-          comments: '',
+          comments: '-',
           rating: 0,
         },
         fav2: {
-          comments: '',
+          comments: '-',
           rating: 0,
         },
         fav3: {
-          comments: '',
+          comments: '-',
           rating: 0,
         },
         fav4: {
-          comments: '',
+          comments: '-',
           rating: 0,
         },
         fav5: {
-          comments: '',
+          comments: '-',
           rating: 0,
         },
     })

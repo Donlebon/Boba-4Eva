@@ -106,49 +106,10 @@ export default function App(){
                 })}
               </div>
             }
-          {(homePage) && <Attr />}
+          {/* {(homePage) && <Attr />} */}
         </div>
     </BrowserRouter>
     </DataProvider>
   )
 
 }
-
-// Fetch Data from Yelp API
-
-// const [cafe, setCafe] = useState([])
-// const [error, setError] = useState(false)
-
-// const getCafes = () => {
-//   // setHomePage(false)
-//   const isMountedRef = useRef(true)
-
-//   useEffect(() => {
-//       return () => {
-//         isMountedRef.current = false;
-//       };
-//     }, []);
-
-//   useEffect(() => {
-      
-//   const fetchData = async () => {
-    
-//       setError(false);
-//       try {
-//           const response = await axios.get('/api');
-//           if (isMountedRef.current) {
-//               setCafe(response.data.businesses);
-//           }
-//       } catch (error) {
-//           console.error('Error fetching data:', error);
-//       }
-//       };
-  
-//       fetchData();
-
-//       return () => {
-//           isMountedRef.current = false;
-//       };
-      
-//   }, []);
-// }

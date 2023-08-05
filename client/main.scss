@@ -11,9 +11,6 @@ $footerColor: #7FEF7D;
 $navbar2: #F69696;
 $navbar3: #F9A3A3;
 
-body{
-    // background-color: #7DEFEF;
-}
 
 // Homepage
 
@@ -203,10 +200,12 @@ body{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin-top: 10em;
 
     h1{
         font-size: 3rem;
         font-family: 'Cherry Bomb One';
+        margin: auto;
     }
 }
 

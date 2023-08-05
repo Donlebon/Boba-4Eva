@@ -9,6 +9,7 @@ const path = require('path');
 const getBobaCafes = require('./routes/getBobaCafes.js');
 const favBobaCafes = require('./routes/favBobaCafes.js');
 const allBobaCafes = require('./routes/allBobaCafes.js');
+const editBobaCafes = require('./routes/editBobaCafes.js')
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -31,7 +32,11 @@ app.post('/api/submit', favBobaCafes);
 
 // Get all Favorite Cafes
 
-app.get('/api/favorites', allBobaCafes);
+app.get('/api/favorites/', allBobaCafes);
+
+// Edit Existing Cafes
+
+app.patch('/api/favorites/:id', editBobaCafes);
 
 // Get Boba Cafes
 app.use('/', getBobaCafes);
