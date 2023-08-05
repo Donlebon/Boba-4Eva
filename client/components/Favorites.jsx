@@ -69,7 +69,6 @@ export default function Navbar(props){
 
     }
     
-    console.log(allBobaCafes)
     
     if(allBobaCafes.length === 0){
         return <h1>Loading...</h1>
