@@ -10,7 +10,9 @@ export default function CafeCards(props){
 
     const {bobaRating, setBobaRating} = useContext(DataContext)
 
-    const {storeName, storePic, storeLocation, storeRating, storeReview, storeId, storeUrl, toggleFav, isFav} = props
+    const {storeName, storePic, storeLocation, storeRating, storeReview, storeId, storeUrl, toggleFav, isFav, editMode} = props
+
+    console.log(props)
     
     const sendFav =  async (e) => {
       e.preventDefault();
@@ -18,7 +20,7 @@ export default function CafeCards(props){
       // Send a POST request to the server
 
       try{
-        const response = await axios.post('/api/submit', {storeName, storeLocation, storeId, storeUrl, isFav: true, bobaRating})
+        const response = await axios.post('/api/submit', {storeName, storeLocation, storeId, storeUrl, isFav: true, editMode: false, bobaRating})
         console.log('Data submitted to MongoDB succesfully')
       }
       catch (err){
@@ -48,7 +50,7 @@ export default function CafeCards(props){
                 <div className = 'card-footer'>
                     <a href = {storeUrl} target = "_blank"> <img className = 'url' src = {yelp} alt = 'boba-shop' /></a>
                     <img 
-                    onClick = {(e) => {toggleFav(e, storeId, storeLocation); sendFav(e, storeName, storeLocation, storeId, storeUrl, isFav, bobaRating)}}
+                    onClick = {(e) => {toggleFav(e, storeId, storeLocation); sendFav(e, storeName, storeLocation, storeId, storeUrl, isFav, bobaRating, editMode)}}
                     className = 'boba' src = {isFav ? favBoba : notFavBoba } />
                 </div>
             </div>

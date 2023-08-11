@@ -18,6 +18,7 @@ const bobaSchema = new Schema({
   storeId: String,
   storeUrl: String,
   isFav: Boolean,
+  editMode: Boolean,
   bobaRating: {
     fav1: {
       comments: String,

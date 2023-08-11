@@ -11,11 +11,6 @@ import DataContext from "../components/DataContext.jsx";
 // Import Boba Ratings 
 
 import Boba1 from './BobaRatings/Boba1.jsx'
-import Boba2 from './BobaRatings/Boba2.jsx'
-import Boba3 from './BobaRatings/Boba3.jsx'
-import Boba4 from './BobaRatings/Boba4.jsx'
-import Boba5 from './BobaRatings/Boba5.jsx'
-
 
 
 export default function Navbar(props){
@@ -24,7 +19,6 @@ export default function Navbar(props){
     // const {bobaRating, setBobaRating} = useContext(DataContext)
 
     const [allBobaCafes, setAllBobaCafes] = useState([])
-    const [editName, setEditName] = useState(false)
     const {setFavPage} = props
     const navigate = useNavigate()
 
@@ -47,77 +41,57 @@ export default function Navbar(props){
         getAllBobaCafes()
     }, [])
     
-    const handleSubmit = async (e) => {
+    const handleToggle = async (e, cafeId, editMode) => {
         e.preventDefault()
-        if(!editName){
-            console.log('we enter edit mode')
-            const response = await fetch(`/api/favorites/${1}`, {
-                method: "PATCH",
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({hello: 'orange'})
+        setAllBobaCafes((prev) => {
+            return prev.map(cafe => {
+                return cafe["_id"] === cafeId ? {...cafe, editMode: !editMode} : cafe
             })
-            const data = await response.json()
-            console.log(data)
-        } else{
-            console.log('we save mode')
-        }
-        setEditName(prev => {
-            return !prev
         })
-
+        console.log(allBobaCafes)
+        // if(!editMode){
+        //     console.log('we enter edit mode for ', cafeId)
+        //     const response = await fetch(`/api/favorites/${1}`, {
+        //         method: "PATCH",
+        //         headers: {
+        //             'Content-Type': 'application/json'
+        //         },
+        //         body: JSON.stringify({hello: 'orange'})
+        //     })
+        //     const data = await response.json()
+        //     console.log(data)
+        // } else{
+        //     console.log('we save the updates for ', cafeId)
+        // }
     }
     
     
     if(allBobaCafes.length === 0){
-        return <h1>Loading...</h1>
+        return (
+            <a href="/favorites" onClick={(e) => handleReturn(e)} className="favorite">Back</a>
+        )
     } 
     else{
-        console.log(allBobaCafes[0].bobaRating.fav1.rating)
         return (
         <>
             <a href="/favorites" onClick={(e) => handleReturn(e)} className="favorite">Back</a>
             <div className = 'fav-container'>
-                    {allBobaCafes.map((cafes) => {
+                    {allBobaCafes.map((cafes, index) => {
                         return (
                             <div className = "favCafe" key = {cafes.storeId}>
                                 <h2>{cafes.storeName}</h2>
                                 <p>{cafes.storeLocation}</p>
-                                <form onSubmit = {(e) => handleSubmit(e)}>
+                                <form onSubmit = {(e) => handleToggle(e, cafes["_id"], cafes.editMode)}>
                                     <Boba1 
-                                    bobaComments = {cafes.bobaRating.fav1.comments}
-                                    bobaRating = {cafes.bobaRating.fav1.rating}
-                                    editName = {editName}
+                                    index = {index}
+                                    allBobaCafes = {allBobaCafes}
+                                    setAllBobaCafes = {setAllBobaCafes}
+                                    editMode = {cafes.editMode}
+                                    cafeLink = {cafes.storeUrl}
+                                    cafeId = {cafes["_id"]}
                                     />
-                                    {/* <Boba2 
-                                    bobaRating = {bobaRating}
-                                    setBobaRating = {setBobaRating}
-                                    editName = {editName}
-                                    />
-                                    <Boba3 
-                                    bobaRating = {bobaRating}
-                                    setBobaRating = {setBobaRating}
-                                    editName = {editName}
-                                    />
-                                    <Boba4 
-                                    bobaRating = {bobaRating}
-                                    setBobaRating = {setBobaRating}
-                                    editName = {editName}
-                                    />
-                                    <Boba5 
-                                    bobaRating = {bobaRating}
-                                    setBobaRating = {setBobaRating}
-                                    editName = {editName}
-                                    /> */}
-                                <div className = 'delete-container'>
-                                    <a href = {`${cafes.storeUrl}`} target = "_blank"> <img className = 'yelp' src = {yelp} alt = 'boba-rating' /></a>
-                                    <button type = 'submit'>{editName ? "Save" : "Edit"}</button>
-                                    <img className = 'trash' src = {trash}/>
-                            </div>
                             </form>
                             </div>
-                            
                         )
                     })}
             </div>

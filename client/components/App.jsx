@@ -44,7 +44,7 @@ export default function App(){
         if (response) {
             console.log(response)
             setCafe(response.data.businesses.map(({name, id, image_url, rating, review_count, url, location}) => {
-              return ({name, id, image_url, rating, review_count, url, location: location.city, isFav: false})
+              return ({name, id, image_url, rating, review_count, url, location: location.city, isFav: false, editMode: false})
             }));
             setIsPending(false)
         }
@@ -101,6 +101,7 @@ export default function App(){
                   storeId = {item.id}
                   storeUrl = {item.url}
                   isFav = {item.isFav}
+                  editMode = {item.editMode}
                   toggleFav = {toggleFav}
                   />)
                 })}
