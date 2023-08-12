@@ -10,6 +10,7 @@ const getBobaCafes = require('./routes/getBobaCafes.js');
 const favBobaCafes = require('./routes/favBobaCafes.js');
 const allBobaCafes = require('./routes/allBobaCafes.js');
 const editBobaCafes = require('./routes/editBobaCafes.js')
+const deleteBobaCafes = require('./routes/deleteFavCafes.js')
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -37,6 +38,10 @@ app.get('/api/favorites/', allBobaCafes);
 // Edit Existing Cafes
 
 app.patch('/api/favorites/:id', editBobaCafes);
+
+// Delete Existing Cafes
+
+app.delete('/api/favorites/:id', deleteBobaCafes);
 
 // Get Boba Cafes
 app.use('/', getBobaCafes);

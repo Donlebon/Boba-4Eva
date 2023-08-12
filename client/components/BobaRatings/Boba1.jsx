@@ -5,7 +5,7 @@ import trash from '../pics/trash.png'
 import yelp from '../pics/yelp.png'
 
 export default function BobaRatings(props) {
-    const { cafeId, cafeLink, editMode, allBobaCafes, setAllBobaCafes } = props;
+    const { cafeId, cafeLink, editMode, allBobaCafes, setAllBobaCafes, removeFav} = props;
 
     const handleChange = (e, ratingKey) => {
                 const newRating = {
@@ -53,11 +53,6 @@ export default function BobaRatings(props) {
             });
         });
     };
-
-    const removeFav = (e, cafeId) => {
-        console.log(cafeId)
-    }
-
 
     return (
         <>

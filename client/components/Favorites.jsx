@@ -28,16 +28,17 @@ export default function Navbar(props){
         navigate("/")
     }
 
-    useEffect(() => {
-        const getAllBobaCafes = async () => {
-            const response = await fetch('/api/favorites', {
-                method: "GET"
-            })
-            const data = await response.json()
-            if(data){
-                setAllBobaCafes(data)
-            }
+    const getAllBobaCafes = async () => {
+        const response = await fetch('/api/favorites', {
+            method: "GET"
+        })
+        const data = await response.json()
+        if(data){
+            setAllBobaCafes(data)
         }
+    }
+
+    useEffect(() => {
         getAllBobaCafes()
     }, [])
     
@@ -64,6 +65,20 @@ export default function Navbar(props){
         //     console.log('we save the updates for ', cafeId)
         // }
     }
+
+    const removeFav = async (e, cafeId) => {
+        const response = await fetch(`/api/favorites/${cafeId}`, {
+            method: "DELETE",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        })
+        const data = await response.json()
+        if(data){
+            getAllBobaCafes()
+        }
+    }
+
     
     
     if(allBobaCafes.length === 0){
@@ -89,6 +104,7 @@ export default function Navbar(props){
                                     editMode = {cafes.editMode}
                                     cafeLink = {cafes.storeUrl}
                                     cafeId = {cafes["_id"]}
+                                    removeFav = {removeFav}
                                     />
                             </form>
                             </div>
