@@ -42,7 +42,6 @@ export default function App(){
           }  
         })
         if (response) {
-            console.log(response)
             setCafe(response.data.businesses.map(({name, id, image_url, rating, review_count, url, location}) => {
               return ({name, id, image_url, rating, review_count, url, location: location.city, isFav: false, editMode: false})
             }));

@@ -8,7 +8,6 @@ cafeController.getAllCafe = async (req, res, next) => {
 
     const location = req.query.location;
     const term = 'boba';
-    console.log('this is running')
     try {
           const response = await axios.get(`https://api.yelp.com/v3/businesses/search`, {
             headers: {

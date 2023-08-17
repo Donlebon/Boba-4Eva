@@ -6,17 +6,16 @@ const editController = {};
 
 editController.editCafe = async (req, res, next) => {
   const newData = req.body; 
-  const params = req.params;
+  const params = req.params.id;
 
-  console.log(params)
+  const editedCafe = newData.filter((id) => id["_id"] === params)
+  const doc = await models.Boba.findOneAndUpdate({_id: params}, {bobaRating: editedCafe[0].bobaRating})
 
-  console.log(newData)
   try {
-    console.log('Editing data successful');
     return next();
   } catch (err) {
-    console.log('Error editing data to MongoDB', err);
-    return next({ err: 'Error editing data in MongoDB' });
+    console.log('Cannot edit favorite cafes', err);
+    return next({ err: 'Cannot edit favorite cafes' });
   }
 };
 

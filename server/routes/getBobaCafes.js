@@ -7,7 +7,6 @@ const cafeController = require('../controller/cafeController')
 
 
 router.get('/api/search', cafeController.getAllCafe, (req, res, next) => {
-    console.log('Fetched Data has been successful')
     return res.status(200).json(res.locals.allBobaCafes)
 })
 

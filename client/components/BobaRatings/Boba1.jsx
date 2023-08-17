@@ -61,6 +61,7 @@ export default function BobaRatings(props) {
                     {editMode ? (
                         <>
                             <input
+                                maxLength = "65"
                                 value={cafe.bobaRating[ratingKey].comments}
                                 onChange={e => handleChange(e, ratingKey)}
                                 className='drinks'
@@ -78,8 +79,8 @@ export default function BobaRatings(props) {
                             </div>
                         </>
                     ) : (
-                        <div className='display-mode'>
-                            <h1>{cafe.bobaRating[ratingKey].comments}</h1>
+                        <>
+                            <h1 className = 'savedInput'>{cafe.bobaRating[ratingKey].comments}</h1>
                             <div className='star-container'>
                                 {[1, 2, 3, 4, 5].map(star => (
                                     <img
@@ -90,7 +91,7 @@ export default function BobaRatings(props) {
                                     />
                                 ))}
                             </div>
-                        </div>
+                        </>
                     )}
                 </div>
             ))}
@@ -98,7 +99,7 @@ export default function BobaRatings(props) {
                 <a href={cafeLink} target="_blank">
                     <img className='yelp' src={yelp} alt='boba-rating' />
                 </a>
-                <button type='submit'>{editMode ? 'Save' : 'Edit'}</button>
+                <button className = "edit" type='submit'>{editMode ? 'Save' : 'Edit'}</button>
                 <img className='trash' src={trash} onClick = {(e) => removeFav(e, cafeId)} />
             </div>
         </>

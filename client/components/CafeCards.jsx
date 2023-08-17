@@ -56,35 +56,3 @@ export default function CafeCards(props){
             </div>
     )
 }
-
-
-// Correctly making a fetch request to server which makes a request to API
-
-// useEffect(() => {
-
-  //   const controller = new AbortController();
-  //   const signal = controller.signal;
-
-  //   const fetchData = async () => {
-  //     setError(false);
-  //     setIsPending(true);
-
-  //     try{
-  //       const response = await fetch('/api', {signal});
-  //       console.log(response)
-  //       const stores = await response.json()
-  //       setCafe(stores.users)
-  //     }
-  //     catch(err){
-  //       setError(true);
-  //     }
-  //     setIsPending(false)
-  //   }
-
-  //   fetchData()
-  //   return () => {controller.abort()}
-  // }, [])
-
-
-
-

@@ -13,7 +13,7 @@ export default function Homepage(props){
     return (
         <>            
             <div className = "nav-container">
-                <h1>Boba Explorer</h1>
+                <h1>Boba 4Eva</h1>
             </div>
             <main className = "home-container">
                 <div className = "highlight"></div>

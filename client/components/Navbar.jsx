@@ -21,9 +21,9 @@ export default function Navbar(props){
     return (
        <>
         <div className = "nav-container2">
-                <div>
-                    <h1>My</h1>
+                <div className = "title">
                     <h1>Boba</h1>
+                    <h1 className = "ever">4eva</h1>
                 </div>
                 <div className = "zip-container">
                     <img className = "elephant" src = {elephant}></img>
@@ -40,9 +40,9 @@ export default function Navbar(props){
 
                 >Submit</button>
 
-                <img className = "cat" src = {cat}></img>
+                    <img className = "cat" src = {cat}></img>
 
-                <a href="/favorites" onClick={(e) => handleNavigate(e)} className="favorite">Favorites</a>
+                    <a href="/favorites" onClick={(e) => handleNavigate(e)} className="favorite">Favorites</a>
 
                 </div>
 

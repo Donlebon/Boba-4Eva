@@ -12,8 +12,8 @@ allBobaController.getAllFavs = async (req, res, next) => {
       return next()
     }
     catch(err){
-      console.log('Error returning data from MongoDB', err)
-      return next({err: 'Error returning data from MongoDB'})
+      console.log('Error returning data', err)
+      return next({err: 'Error returning data'})
     }
     
 }

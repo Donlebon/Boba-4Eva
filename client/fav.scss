@@ -1,13 +1,69 @@
+$bodyfont: 'Lora', serif;
+$navbar: #F89898;
+$buttonColor: #8B89F3;
+$footerColor: #7FEF7D;
+$navbar2: #F69696;
+$navbar3: #F9A3A3;
+$body: #DFDFDF;
+
+.add{
+    font-family: $bodyfont;
+    text-align: center;
+    margin-top: 10em;
+}
+
+.back{
+    text-decoration: none;
+    font-family: $bodyfont;
+    cursor: pointer;
+    height: 50px;
+    font-size: 1.1rem;
+    border-style: none;
+    border-radius: 0.5em;
+    background-color: $navbar;
+    color: white;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    max-width: auto;
+    display: flex;
+    justify-content: center;
+    width: 95%;
+    margin: auto;
+    margin-bottom: 2em;
+}
+
+.back:active{
+    border: 0.1px solid black;
+    background-color: white;
+    color: $buttonColor;
+    transition: 0.1s ease-in-out;
+}
+
+.backEmpty{
+    margin-top: 2em;
+}
+
+.favorites{
+    padding: 0 4em 0 4em;
+    margin-top: 2em;
+    font-family: $bodyfont;
+}
+
 .fav-container{
     display: flex;
     text-align: center;
-    justify-content: center;
-    border: 1px solid black;
-    width: 1000px;
-    margin: auto;
+    flex-wrap: wrap;
+    gap: 1em;
 
     .favCafe{
-        margin-left: 10em;
+        padding: 1em;
+        min-width: 350px;
+        max-width: 350px;
+        margin: auto;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     }
 
     p{
@@ -18,20 +74,30 @@
         margin-bottom: 1em; 
         display: flex;
         justify-content: space-around;
+
+        .drinks{
+            font-size: 1rem;
+            height: 25px;
+        }
     }
 
     .delete-container{
         display: flex;
-        align-items: flex-start;
+        align-items: flex-end;
         justify-content: space-between;
     }
+}
+
+.savedInput{
+    font-size: 1.1rem;
+    width: 170.5px;
 }
 
 .yelp{
     width: 25px;
     height: 25px;   
     margin-left: 0.3em;
-    margin-bottom: 0.3em;
+    margin-top: 0.3em;
 }
 .trash{
     height: 25px;
@@ -42,7 +108,8 @@
 }
 
 .star-container{
-    margin-left: 1em;
+    display: flex;
+    align-items: center;
 }
 
 .blankStar{
@@ -54,4 +121,28 @@
 .star{
     height: 25px;
     width: 25px;
+}
+
+.edit{
+    text-decoration: none;
+    font-family: $bodyfont;
+    cursor: pointer;
+    height: 35px;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-size: 1.1rem;
+    border-style: none;
+    border-radius: 0.3em;
+    background-color: $buttonColor;
+    color: white;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+.edit:active{
+    border: 0.1px solid black;
+    background-color: white;
+    color: $buttonColor;
+    transition: 0.1s ease-in-out;
 }

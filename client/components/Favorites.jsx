@@ -15,9 +15,7 @@ import Boba1 from './BobaRatings/Boba1.jsx'
 
 export default function Navbar(props){
 
-    // Rating for Boba Favorite Cards
-    // const {bobaRating, setBobaRating} = useContext(DataContext)
-
+    const [isLoading, setIsLoading] = useState(true)
     const [allBobaCafes, setAllBobaCafes] = useState([])
     const {setFavPage} = props
     const navigate = useNavigate()
@@ -35,35 +33,8 @@ export default function Navbar(props){
         const data = await response.json()
         if(data){
             setAllBobaCafes(data)
+            setIsLoading(false)
         }
-    }
-
-    useEffect(() => {
-        getAllBobaCafes()
-    }, [])
-    
-    const handleToggle = async (e, cafeId, editMode) => {
-        e.preventDefault()
-        setAllBobaCafes((prev) => {
-            return prev.map(cafe => {
-                return cafe["_id"] === cafeId ? {...cafe, editMode: !editMode} : cafe
-            })
-        })
-        console.log(allBobaCafes)
-        // if(!editMode){
-        //     console.log('we enter edit mode for ', cafeId)
-        //     const response = await fetch(`/api/favorites/${1}`, {
-        //         method: "PATCH",
-        //         headers: {
-        //             'Content-Type': 'application/json'
-        //         },
-        //         body: JSON.stringify({hello: 'orange'})
-        //     })
-        //     const data = await response.json()
-        //     console.log(data)
-        // } else{
-        //     console.log('we save the updates for ', cafeId)
-        // }
     }
 
     const removeFav = async (e, cafeId) => {
@@ -79,17 +50,55 @@ export default function Navbar(props){
         }
     }
 
+    const editFav = async (e, cafeId, allBobaCafes) => {
+        const response = await fetch(`/api/favorites/${cafeId}`, {
+            method: "PATCH",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(allBobaCafes)
+        })
+        const data = await response.json()
+        if(data){
+            console.log('Successfully edited data')
+        }
+    }
+
+    useEffect(() => {
+        getAllBobaCafes()
+    }, [])
     
+    const handleToggle = async (e, cafeId, editMode) => {
+        e.preventDefault()
+        setAllBobaCafes((prev) => {
+            return prev.map(cafe => {
+                return cafe["_id"] === cafeId ? {...cafe, editMode: !editMode} : cafe
+            })
+        })
+        if(editMode){
+            editFav(e, cafeId, allBobaCafes)
+        }
+    }
     
-    if(allBobaCafes.length === 0){
+    if(isLoading){
         return (
-            <a href="/favorites" onClick={(e) => handleReturn(e)} className="favorite">Back</a>
+            <>
+                <a href="/favorites" onClick={(e) => handleReturn(e)} className="favorite back backEmpty">Back</a>
+                <h1 className = 'add'>Loading...</h1>
+            </>
+        )
+    } else if(allBobaCafes.length === 0){
+        return (
+            <>
+                <a href="/favorites" onClick={(e) => handleReturn(e)} className="favorite back backEmpty">Back</a>
+                <h1 className = 'add'>No Cafes Found...</h1>
+            </>
         )
     } 
     else{
         return (
-        <>
-            <a href="/favorites" onClick={(e) => handleReturn(e)} className="favorite">Back</a>
+        <div className = 'favorites'>
+            <a href="/favorites" onClick={(e) => handleReturn(e)} className="favorite back">Back</a>
             <div className = 'fav-container'>
                     {allBobaCafes.map((cafes, index) => {
                         return (
@@ -111,7 +120,7 @@ export default function Navbar(props){
                         )
                     })}
             </div>
-        </>
+        </div>
         )
     }
 }
