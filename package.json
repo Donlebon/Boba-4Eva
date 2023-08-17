@@ -2,11 +2,14 @@
   "name": "",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://github.com/Donlebon/Boba-4Eva",
   "main": "index.js",
   "scripts": {
     "start": "node server/server.js",
     "build": "NODE_ENV=production webpack",
-    "dev": "NODE_ENV=development nodemon server/server.js & NODE_ENV=development webpack-dev-server"
+    "dev": "NODE_ENV=development nodemon server/server.js & NODE_ENV=development webpack-dev-server",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "nodemonConfig": {
     "ignore": [
@@ -37,6 +40,7 @@
     "concurrently": "^6.0.2",
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.4",
+    "gh-pages": "^6.0.0",
     "html-webpack-plugin": "^5.5.1",
     "nodemon": "^2.0.22",
     "sass": "^1.62.1",
