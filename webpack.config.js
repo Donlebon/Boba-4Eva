@@ -23,9 +23,6 @@ module.exports = {
         compress: true,
         port: 8080,
         historyApiFallback: true
-        // devMiddleware:{npm 
-        //     publicPath: '/'
-        // } 
     },
     module: {
         rules: [

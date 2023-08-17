@@ -2,7 +2,7 @@
   "name": "",
   "version": "1.0.0",
   "description": "",
-  "homepage": ".",
+  "homepage": "https://github.com/Donlebon/Boba-4Eva",
   "main": "index.js",
   "scripts": {
     "start": "node server/server.js",
