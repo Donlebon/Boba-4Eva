@@ -2,7 +2,9 @@
 
 <b> Tired of always forgetting which boba drinks you've tried? Well, Boba4Eva is your solution! Search for cafes and favorite which spot you like! You can also record which drinks you've tried and give them your own rating </b>
 
-![Boba-App](boba-app.mov)
+<video width="320" height="240" controls>
+  <source src="boba-app.mov" type="video/mp4">
+</video>
 
 # Tech Stack:
 
@@ -18,8 +20,5 @@
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 ![Webpack](https://img.shields.io/badge/Webpack-8DD6F9?style=for-the-badge&logo=Webpack&logoColor=white)
 
-This project highlights interacting with the movie API and using a browser's local storage to be able to save the user's movie choices.
-
 # Lessons Learned:
 
-This project served as a good beginning point to transition into more complex applications. The client's input is used to fetch data from an API. The returned promised data is a list of movies that contains the client's keywords. The browser's local storage acts like a database where we can store the user's favorite movies and also remove them from the list.
