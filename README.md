@@ -2,11 +2,14 @@
 
 <b> Tired of always forgetting which boba drinks you've tried? Well, Boba4Eva has got ya covered! Search for cafes and favorite which spot you like. Record which drinks you've tried and give them a star rating! </b>
 
+https://github.com/Donlebon/Boba-4Eva/assets/48774962/ab5f57cc-3436-43ce-a855-a4fe465ed968
 
-https://github.com/Donlebon/Boba-4Eva/assets/48774962/a3da31c2-e7f1-45cd-9341-196c018d6c4b
+https://github.com/Donlebon/Boba-4Eva/assets/48774962/b003e581-0f02-4a6c-966f-679bf44ce571
 
 
-https://github.com/Donlebon/Boba-4Eva/assets/48774962/f7bab3d2-7981-455d-88a9-5dfade859206
+
+
+
 
 
 # Tech Stack:
