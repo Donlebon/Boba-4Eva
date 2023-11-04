@@ -35,5 +35,5 @@ npm run dev
 
 # Insight
 
-This web application was inspired by my passion of drinking boba. I always love trying different bobas and visiting new cafes. However, if I've visited a favorite cafe multiple times, I tend to forget which 
-drinks I've liked and disliked. 
+This web application was inspired by my passion for drinking boba. I love trying different drinks and visiting new cafes weekly. However, if I've visited a cafe multiple times, I always forget which 
+drinks I've tried previously and which I liked/disliked. Thus, Boba 4Eva was born! (Name is still in progress...)
